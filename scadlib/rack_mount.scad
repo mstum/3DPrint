@@ -9,16 +9,15 @@
 
 use <misc.scad>;
 
-function rack_units(units = 1) = 44.45 * units; // 1.75"
-    
+function rack_spacing() = 0.794; // ​1⁄32 inch (0.03125 in or 0.794 mm)
+function rack_units(units = 1, apply_spacing = false)
+    = apply_spacing
+        ? (44.45 * units) - rack_spacing()
+        : (44.45 * units);
+        
 module rack_mounting_ear(units = 1, apply_spacing = true, ear_width = 25.4, ear_strength = 2)
-{
-    rack_spacing = 0.794; // ​1⁄32 inch (0.03125 in or 0.794 mm)
-    
-    total_height = apply_spacing
-        ? rack_units(units) - rack_spacing
-        : rack_units(units);
-    
+{   
+    total_height = rack_units(units, apply_spacing);    
     cube(size = [ear_width, ear_strength, total_height], center = false);
 }
 
@@ -37,16 +36,16 @@ module rack_mounting_ear_holes(bottom = true, top = true, middle = true, ear_wid
     
     if (top) {
         translate([vpos,ear_screwhole_ypos,top_pos])
-        rounded_cube([ear_screwhole_width, ear_strength*2, ear_screwhole_height]);
+          rounded_cube([ear_screwhole_width, ear_strength*2, ear_screwhole_height]);
     }
     
     if (middle) {
         translate([vpos,ear_screwhole_ypos,middle_pos])
-        rounded_cube([ear_screwhole_width, ear_strength*2, ear_screwhole_height]);
+          rounded_cube([ear_screwhole_width, ear_strength*2, ear_screwhole_height]);
     }
     
     if (bottom) {
         translate([vpos,ear_screwhole_ypos,bottom_pos])
-        rounded_cube([ear_screwhole_width, ear_strength*2, ear_screwhole_height]);
+          rounded_cube([ear_screwhole_width, ear_strength*2, ear_screwhole_height]);
     }
 }

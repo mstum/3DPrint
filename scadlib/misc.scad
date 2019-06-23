@@ -18,6 +18,6 @@ module rounded_cube(d,r=2) {
         translate([r,0,r]) cube([cube_width, cube_height, cube_depth]);
         
         rotate([90,0,0])
-        cylinder(r=r,h=cube_depth,center=true, $fn=64);
+          cylinder(r=r,h=cube_depth,center=true, $fn=64);
     }
 }
