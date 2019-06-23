@@ -73,7 +73,7 @@ wall_height =  full_height_walls
         ? add_ceiling
             ? wall_height_full-ceiling_strength
             : wall_height_full
-        : 20;
+        : inch_to_mm(1);
 
 /* LTO Tape in one of those annoying wide cases */
 tape_width = 29;
