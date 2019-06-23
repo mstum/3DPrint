@@ -1,0 +1,9 @@
+These Profiles were taken from various sources and not created by me.
+
+* https://www.reddit.com/r/CR10/comments/7mxxv6/the_best_cr10s_settings_for_simplify_3d_fff/
+* https://www.youtube.com/watch?v=jGK18LemwYY
+* https://cdn.discordapp.com/attachments/454105584027828224/496814373504024597/PriestsProfileV4.1.fff
+* https://zygadlo.pl/creality3d-cr-10-profile/travis_fletchers_ultimate_petg_profile_v2/
+* PriestV5.curaprofile: https://makerware.thingiverse.com/groups/creality-cr-10/forums/general/topic:32200
+
+PriestsProfileV4-Hotter.fff is my profile for AmazonBasics PLA Filament, which needed a few extra degrees of temperature on my printer.
