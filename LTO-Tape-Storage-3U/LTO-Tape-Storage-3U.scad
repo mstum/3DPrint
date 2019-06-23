@@ -32,7 +32,7 @@ full_height_walls = false;
 add_ceiling = false;
 
 // Add mounting ears for rack mount? (Set false if put on a desk or if you want to attach your own ear/rail)
-add_rack_mount_ear = false;
+add_rack_mount_ear = true;
 
 // Two mirrored pieces (Left and Right) can be combined
 // to fill out a 19" Rack. This sets whether we're doing
