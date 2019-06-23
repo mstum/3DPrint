@@ -80,19 +80,9 @@ tape_width = 29;
 tape_depth = 112;
 tape_height = 114;
 
+/* Breathing room on the side of each tape, basically whatever is left after subtracting the tape width and wall width */
 tape_box_extra_width = (floor_width - (num_tapes * tape_width) - ((num_tapes+1) * wall_strength)) / num_tapes;
 tape_box_width = tape_width + tape_box_extra_width;
-
-ear_screwhole_width = 12; // M6 Bolt with wiggle room
-ear_screwhole_height = 7;
-ear_middlehole_pos = rack_units(0.5);
-ear_bottom_bottomhole_pos = 4;
-ear_bottom_tophole_pos = rack_units() - ear_screwhole_height - ear_bottom_bottomhole_pos;
-
-ear_width = inch_to_mm(1);
-ear_height = total_height;
-ear_screwhole_scalefactor = ear_screwhole_height / ear_screwhole_width;
-ear_screwhole_vposition = 10;
 
 module half_rack()
 {
@@ -155,6 +145,8 @@ module half_rack()
 
 module mounting_ear()
 {
+    ear_width = inch_to_mm(1);
+    
     translate([-ear_width,0,0]) 
     difference() {            
         rack_mounting_ear(units = 3, ear_width = ear_width, ear_strength = ear_strength);
